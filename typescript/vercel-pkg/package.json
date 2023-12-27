@@ -1,0 +1,31 @@
+{
+    "name": "project-template-for-pkg-vercel",
+    "version": "1.0.0",
+    "description": "Vercel PKG based NodeJS package.json",
+    "main": "index.ts",
+    "scripts": {
+      "build": "tsc && pkg .",
+      "start": "ts-node index.ts"
+    },
+    "bin": "dist/index.js",
+    "pkg": {
+      "outputPath": "dist",
+      "targets": [
+        "node18-win-x64"
+      ],
+      "scripts": "dist/**/*.js",
+      "assets": [ "dist/**" ]
+    },
+    "author": "txj-xyz",
+    "license": "ISC",
+    "dependencies": {
+      "chalk": "^4.1.2",
+      "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+      "pkg": "^5.8.1",
+      "ts-node": "^10.9.1",
+      "typescript": "^5.2.2"
+    }
+  }
+  
