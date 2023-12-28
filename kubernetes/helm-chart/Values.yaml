@@ -1,0 +1,4 @@
+daemonSetName: my-custom-cron
+image:
+  repository: busybox
+  tag: latest

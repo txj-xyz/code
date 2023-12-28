@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: {{ .Values.daemonSetName }}
+  labels:
+    app: cronjob
+spec:
+  selector:
+    matchLabels:
+      app: cronjob
+  template:
+    metadata:
+      labels:
+        app: cronjob
+    spec:
+      containers:
+      - name: cronjob-container
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        command:
+        - "/bin/sh"
+        - "-c"
+        - "hostname"
+      restartPolicy: Always
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/os
+                operator: In
+                values:
+                - linux

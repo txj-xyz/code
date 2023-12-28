@@ -1,0 +1,4 @@
+apiVersion: v2
+name: cronjob-all-nodes
+description: A HELM Chart to deploy a Cron to all nodes in a Cluster.
+version: 1.0.0
