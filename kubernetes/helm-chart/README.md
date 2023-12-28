@@ -11,8 +11,8 @@ This will run a `CronJob` on every node in the cluster running `linux`
 $ helm package .
 
 # Add the new repo to your cluster repos.
-$ helm repo add my-custom-repo https://github.com/user/cronjob-all-nodes
+$ helm repo add my-custom-repo https://github.com/user/template-name
 
 # Install the new chart
-$ helm install my-job-name my-custom-repo/cronjob-all-nodes
+$ helm install my-job-name my-custom-repo/template-name
 ```
