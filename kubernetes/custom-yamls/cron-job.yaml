@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: my-cron
+  namespace: default
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: my-cron
+            image: busybox:1.28
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - ls -laR /app
+            volumeMounts:
+            - name: varlog
+              mountPath: /app
+            securityContext:
+              runAsUser: 0
+          volumes:
+          - name: varlog
+            hostPath:
+              path: /var/log
+              type: Directory
+          restartPolicy: Never
