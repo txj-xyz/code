@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -x SSH_UPDATER_DOWNLOAD_VERSION="9.8p1"
+SSH_UPDATER_DOWNLOAD_VERSION=9.8p1
 
 function update_ssh_version {
     clear
