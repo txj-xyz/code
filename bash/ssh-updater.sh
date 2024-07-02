@@ -60,9 +60,9 @@ function update_ssh_version {
         return 1
     fi
 
-    sudo mkdir -p /opt/flex/backups
-    echo -e "\t --- Moving SSH backup to '/opt/flex/backups/' ---"
-    sudo mv -v /usr/sbin/sshd /opt/flex/backups/sshd.bak
+    sudo mkdir -p /opt/ssh_backups/backups
+    echo -e "\t --- Moving SSH backup to '/opt/ssh_backups/backups/' ---"
+    sudo mv -v /usr/sbin/sshd /opt/ssh_backups/backups/sshd.bak
     sudo cp -v /usr/local/sbin/sshd /usr/sbin/sshd
     echo -e "\t-------------------"
 
